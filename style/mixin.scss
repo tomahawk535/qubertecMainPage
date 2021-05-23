@@ -1,0 +1,45 @@
+@import "variables";
+
+// text
+@mixin  user-text {
+  font-size: 18px;
+  line-height: 20px;
+  font-family:  $font;
+  font-weight: 700;
+}
+@mixin user-text-mobile {
+  font-size: 12px;
+  line-height: 12px;
+  font-family:  $font;
+  font-weight: 400;
+}
+@mixin headers {
+  font-size: 30px;
+  line-height: 34px;
+  font-family:  $font;
+  font-weight: 400;
+}
+
+@mixin table-headers {
+  font-size: 14px;
+  line-height: 16px;
+  font-family:  $font;
+  font-weight: 400;
+}
+@mixin table-rows {
+  font-size: 14px;
+  line-height: 18px;
+  font-family:  $font;
+  font-weight: 400;
+}
+
+@mixin btn {
+  font-size: 24px;
+  line-height: 28px;
+  font-family:  $font;
+  font-weight: 400;
+  outline: none;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: $border-radius;
+}

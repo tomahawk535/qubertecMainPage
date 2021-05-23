@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>SHLOMO SIXT-main page</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+
+
+    <!-- style -->
+    <link rel="stylesheet" href="style/style.min.css">
+</head>
+<body>
+    <header>
+        <div class="user">
+            <div class="user-info">
+                <p class="user-info-title">
+                    שם סוכן
+                    <span>
+                        ישראל ישראלי
+                    </span>
+                    </p>
+                <p class="user-info-id">
+                    <span>123456</span>
+                    מספר
+                </p>
+            </div>
+            <div class="user-ico">
+                <img src="img/user-ico.png"
+                     alt="img"
+                     class="user-ico-img">
+            </div>
+        </div>
+    </header>
+    <article id="app">
+        <div class="options">
+            <div class="select-option">
+                <button class="select">
+                    פוליסות שהופקו
+                </button>
+                <button class="select active">
+                    הצעות אחרונות
+                </button>
+            </div>
+            <div class="some-ico not-mobile">
+                <img src="img/article-user-ico.png"
+                alt="img"
+                class="some-ico-icon">
+
+            </div>
+        </div>
+        <div class="search-section">
+            <button class="search-section-btn not-mobile">< הצעה חדשה </button>
+            <div class="for-mobile add">
+                <img src="img/plus.png"
+                     alt="img"
+                >
+            </div>
+            <div class="search-group">
+                <img class="search-ico"
+                     src="img/seach-ico.png"
+                     alt="search"
+                >
+                <input type="search"
+                       placeholder="חיפוש"
+                       dir="rtl"
+                >
+            </div>
+            <hr class="mobile-underline">
+        </div>
+        <div class="mobile-cart"
+             v-for="car in cars"
+             :key="car.id"
+        >
+            <div class="mobile-cart-header">
+                <div class="letter-ico">
+                    <img src="img/letter-ico.svg"
+                         alt="img"
+                    >
+                </div>
+                <div class="pan-ico">
+                    <img src="img/pan-ico.svg"
+                         alt="img"
+                    >
+                </div>
+                <div class="car-ico">
+                    <img src="img/car-ico.png"
+                         alt="img"
+                    >
+                </div>
+            </div>
+            <div class="mobile-curt-list">
+                <div class="left-side">
+                    <p> מספר רישוי <br> <span> {{car.num1}}</span></p>
+                    <p> תחילת ביטוח <br> <span> {{car.num4}}</span></p>
+                    <p><br><span class="green"> (נשלחה ללקוח)</span></p>
+                </div>
+                <div class="right-side">
+                    <p> קולקטיב <br> <span>{{car.text1}}</span></p>
+                    <p> שם מבוטח <br> <span> {{car.text2}}</span></p>
+                    <p> תעודת זהות <br> <span> {{car.num2}}</span></p>
+                    <p> פתיחת הצעה <br> <span> {{car.num3}}</span></p>
+                    <p> פוליסה <br> <span> {{car.num5}}</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="desktop-list">
+            <ul class="car-list">
+                <li class="car-list-item header-item">
+                    <p class="header-item-name checkbox"> נשלח ללקוח</p>
+                    <p class="header-item-name code">מס‘ פוליסה</p>
+                    <p class="header-item-name year2">תחילת הביטוח</p>
+                    <p class="header-item-name year1">פתיחת ההצעה</p>
+                    <p class="header-item-name car-code">תעודת זהות</p>
+                    <p class="header-item-name car-num">מס‘ רישוי</p>
+                    <p class="header-item-name brand">שם מבוטח</p>
+                    <p class="header-item-name name">מוצר</p>
+                    <p class="header-item-name num">ענף</p>
+                </li>
+                <li class="car-list-item  body-item"
+                    v-for="car in cars"
+                    :key="car.id"
+                >
+
+                    <label class="custom-checkbox">
+                        <input type="checkbox"
+                        >
+                        <p class="list-item-title checkbox"></p>
+                        <p class="list-item-title code">{{car.num5}}</p>
+                        <p class="list-item-title year2">  {{car.num4}}</p>
+                        <p class="list-item-title year1">  {{car.num3}}</p>
+                        <p class="list-item-title car-code">  {{car.num2}}</p>
+                        <p class="list-item-title car-num">  {{car.num1}}</p>
+                        <p class="list-item-title brand">  {{car.text2}}</p>
+                        <p class="list-item-title name">  {{car.text1}}</p>
+                        <p class="list-item-title num"> רכב </p>
+                    </label>
+                   <div class="contact">
+                       <a href="#"
+                          class="letter"
+                       >
+                           <img src="img/Vector.png"
+                                alt="img"
+                           >
+                       </a>
+                       <a href="#"
+                          class="pencil"
+                       >
+                           <img src="img/Group.png"
+                                alt="img"
+                           >
+                       </a>
+                   </div>
+                </li>
+            </ul>
+        </div>
+    </article>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="js/index.min.js"></script>
+</body>
+</html>
