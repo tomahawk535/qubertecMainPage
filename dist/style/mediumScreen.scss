@@ -1,0 +1,50 @@
+@import "variables";
+@import "mixin";
+
+@media all and (min-width: 766px) {
+  article {
+      .not-mobile {
+        display: block;
+      }
+      .options {
+        display: flex;
+        align-items: center;
+        width: 90%;
+        max-width: 1076px;
+        margin: 27px auto 0;
+        border-bottom: 3px solid #fff;
+        justify-content: space-between;
+        .select-option {
+          width: 90%;
+          height: 55px;
+        }
+      }
+    .search-section {
+      width: 90%;
+      max-width: 1075px;
+      margin: 0 auto;
+      padding: 40px 0 35px;
+      .for-mobile {
+        display: none;
+      }
+      .mobile-underline {
+        display: none;
+      }
+      .search-group {
+        flex-basis: 75%;
+        height: 58px;
+      }
+      .search-section-btn {
+        flex-basis: 20%;
+        @include btn;
+        background-color:  $btn-bg-color-first;
+        color: $main-font-color;
+        height: 58px;
+        font-size: 18px;
+      }
+    }
+    .mobile-cart {
+      width: 45%;
+    }
+  }
+}

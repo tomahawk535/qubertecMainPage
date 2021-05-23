@@ -1,0 +1,146 @@
+@import "mixin";
+@import "variables";
+@media all and (min-width: 1200px) {
+  header {
+    .user {
+      .user-info-title, .user-info-id {
+        @include user-text;
+        span {
+          font-weight: 900;
+        }
+      }
+      .user-ico {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+      }
+    }
+  }
+  article {
+    flex-direction: column;
+    .mobile-cart {
+      display: none;
+    }
+    .desktop-list {
+      display: block;
+      width: 100%;
+      max-width: 1076px;
+      margin: 0 auto;
+      .car-list {
+        width: 100%;
+        .car-list-item {
+          display: flex;
+          list-style-type: none;
+        }
+        .header-item {
+          pointer-events: none;
+          .header-item-name {
+            @include table-headers;
+            color: $main-font-color;
+          }
+        }
+        .body-item {
+          position: relative;
+          @include table-headers;
+          color: $sub-font-color;
+          padding: 2px 0;
+          background-color: $bg-color-wht;
+          border-radius: $border-radius;
+          margin: 5px 0;
+          height: 45px;
+          align-items: center;
+          cursor: pointer;
+          .custom-checkbox {
+            display: flex;
+            cursor: pointer;
+            position: relative;
+            align-items: center;
+            input {
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              //top: calc (20px -50%);
+              left: 50px;
+              opacity: 0;
+              z-index: -1;
+            }
+            .checkbox::before {
+              content: '';
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-size: 100%;
+
+            }
+            input:checked+.checkbox::before {
+              background-color: transparent;
+              background-image: url("../img/chekbox.png");
+            }
+
+          }
+          .list-item-title {
+            border-right: 1px solid #5e5e5e;
+            &:last-child {
+              border: none;
+            }
+          }
+          .contact {
+            position: absolute;
+            top: 0;
+            right: -111px;
+            display: none;
+            height: 100%;
+
+          }
+          .letter, .pencil {
+            height: 100%;
+            width: 45px;
+            background-color: $bg-color-wht;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-left: 11px;
+            &:hover {
+              background-color: $active-color;
+            }
+          }
+          &:hover {
+            background-color: $active-color;
+            color: $main-font-color;
+            transition: 0.5s;
+            .contact {
+              display: flex;
+              transition: 0.5s;
+            }
+          }
+        }
+        .num {
+          width: 63px;
+          text-align: center;
+        }
+        .name, .brand {
+          width: 167px;
+          text-align: center;
+        }
+        .car-num, .car-code, .year1, .year2 {
+          width: 105px;
+          text-align: center;
+        }
+        .code {
+          width: 122px;
+          text-align: center;
+          display: block;
+        }
+        .checkbox {
+          width: 139px;
+          text-align: center;
+        }
+
+      }
+    }
+  }
+
+}

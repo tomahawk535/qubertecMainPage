@@ -1,0 +1,184 @@
+@import "variables";
+@import "mixin";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  .user {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    padding: 20px 17px;
+    text-align: right;
+    color: $user-font-color;
+    .user-info-title, .user-info-id {
+      @include user-text-mobile;
+      span {
+        font-weight: bolder;
+      }
+    }
+    .user-ico {
+      width: 30px;
+      height: 30px;
+      background-color: $btn-bg-color-first;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      margin-left: 11px;
+    }
+  }
+}
+article {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: linear-gradient(360deg, rgba(33, 50, 94, 0.8) 12.59%, rgba(33, 50, 94, 0.8) 101.31%),
+  url("../img/mobile-bg.png");
+  background-size: contain;
+  .not-mobile {
+    display: none;
+  }
+  .desktop-list {
+    display: none;
+  }
+  .options {
+    width: 100%;
+    margin: 27px 0;
+    .select-option {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: nowrap;
+      border-radius: $border-radius;
+      background-color: $bg-color-wht;
+      .select {
+        flex-basis: 50%;
+        @include btn;
+        font-size: 18px;
+        line-height: 20px;
+        color: $third-font-color;
+        padding: 10px 22px;
+        background-color:  $bg-color-wht;
+      }
+      .active {
+        background-color: $active-color;
+      }
+    }
+  }
+  .search-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    .search-group {
+      flex-basis: 85%;
+      display: flex;
+      height: 40px;
+      align-items: center;
+      background-color: $bg-color-wht;
+      border-radius:  $border-radius;
+      padding: 0 15px;
+      input {
+        flex-basis: 90%;
+        padding: 0 10px;
+        border: none;
+        outline: none;
+        @include user-text;
+        color: $third-font-color;
+      }
+      .search-ico {
+        width: 19px;
+        height: 19px;
+        cursor: pointer;
+      }
+    }
+    .add {
+      flex-basis: 15%;
+      max-width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color:  $btn-bg-color-first;
+      cursor: pointer;
+    }
+    .mobile-underline {
+      flex-basis: 100%;
+      margin: 26px auto;
+      height: 3px;
+      background-color:  $bg-color-wht;
+      border-radius: 10px;
+    }
+  }
+  .mobile-cart {
+    width: 90%;
+    margin: 0 auto 26px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 30px;
+    background-color:  $bg-color-wht;
+    .mobile-cart-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 13px;
+      border-bottom: 2px solid #1D4076;
+      .letter-ico, .pan-ico {
+        background-color: $btn-bg-color-first;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        img {
+          width: 60%;
+        }
+      }
+      .pan-ico {
+        margin-left: 15px;
+      }
+      .car-ico {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .mobile-curt-list {
+      display: flex;
+      flex-wrap: nowrap;
+      .left-side, .right-side {
+        flex-basis: 50%;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        p {
+          @include user-text;
+          color: $sub-font-color;
+          margin-top: 14px;
+        }
+        span {
+          color: #21325E;
+          font-size: 20px;
+          line-height: 23px;
+        }
+        .green {
+          color: #009C41;
+        }
+      }
+    }
+  }
+
+}
