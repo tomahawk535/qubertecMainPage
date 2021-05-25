@@ -43,8 +43,12 @@
         font-size: 18px;
       }
     }
-    .mobile-cart {
-      width: 45%;
+    .car-list {
+      display: flex;
+      flex-wrap: wrap;
+      .car-item {
+        flex-basis: 45%;
+      }
     }
   }
 }

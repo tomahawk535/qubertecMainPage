@@ -65,9 +65,6 @@ article {
 article .not-mobile {
   display: none
 }
-article .desktop-list {
-  display: none
-}
 article .options {
   width: 100%;
   margin: 27px 0
@@ -119,8 +116,7 @@ article .search-section {
   padding: 10px 5%
 }
 article .search-section .search-group {
-  -ms-flex-preferred-size: 85%;
-  flex-basis: 85%;
+  width: 83%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -133,8 +129,7 @@ article .search-section .search-group {
   padding: 0 15px
 }
 article .search-section .search-group input {
-  -ms-flex-preferred-size: 90%;
-  flex-basis: 90%;
+  width: 100%;
   padding: 0 10px;
   border: none;
   outline: 0;
@@ -175,33 +170,31 @@ article .search-section .mobile-underline {
   background-color: #fff;
   border-radius: 10px
 }
-article .mobile-cart {
+article .car-list {
+  width: 100%
+}
+article .car-list .cars-headers-desktop {
+  display: none
+}
+article .car-list .car-item {
   width: 90%;
   margin: 0 auto 26px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
   padding: 20px;
   border-radius: 30px;
   background-color: #fff
 }
-article .mobile-cart .mobile-cart-header {
-  width: 100%;
+article .car-list .car-item .not-mobile {
+  display: none
+}
+article .car-list .car-item .car-navigation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   padding-bottom: 13px;
   border-bottom: 2px solid #1d4076
 }
-article .mobile-cart .mobile-cart-header .letter-ico,
-article .mobile-cart .mobile-cart-header .pan-ico {
+article .car-list .car-item .car-navigation .letter-ico,
+article .car-list .car-item .car-navigation .pan-ico {
   background-color: #009c41;
   height: 40px;
   width: 40px;
@@ -216,14 +209,14 @@ article .mobile-cart .mobile-cart-header .pan-ico {
   align-items: center;
   border-radius: 50%
 }
-article .mobile-cart .mobile-cart-header .letter-ico img,
-article .mobile-cart .mobile-cart-header .pan-ico img {
+article .car-list .car-item .car-navigation .letter-ico img,
+article .car-list .car-item .car-navigation .pan-ico img {
   width: 60%
 }
-article .mobile-cart .mobile-cart-header .pan-ico {
+article .car-list .car-item .car-navigation .pan-ico {
   margin-left: 15px
 }
-article .mobile-cart .mobile-cart-header .car-ico {
+article .car-list .car-item .car-navigation .car-ico {
   margin-left: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -235,46 +228,62 @@ article .mobile-cart .mobile-cart-header .car-ico {
   -ms-flex-pack: center;
   justify-content: center
 }
-article .mobile-cart .mobile-curt-list {
+article .car-list .car-item .car-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
 }
-article .mobile-cart .mobile-curt-list .left-side,
-article .mobile-cart .mobile-curt-list .right-side {
+article .car-list .car-item .car-info .custom-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  cursor: pointer;
+  position: relative;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  pointer-events: none
+}
+article .car-list .car-item .car-info .custom-checkbox input {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 50px;
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none
+}
+article .car-list .car-item .car-info .num {
+  display: none
+}
+article .car-list .car-item .car-info .checkbox,
+article .car-list .car-item .car-info p {
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
-  text-align: right;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end
-}
-article .mobile-cart .mobile-curt-list .left-side p,
-article .mobile-cart .mobile-curt-list .right-side p {
   font-size: 18px;
   line-height: 20px;
   font-family: Arimo,sans-serif;
   font-weight: 700;
+  margin-top: 14px;
+  text-align: right;
+  font-size: 18px;
+  font-weight: 20px;
+  color: #21325e
+}
+article .car-list .car-item .car-info span {
   color: #888;
-  margin-top: 14px
+  font-size: 16px;
+  line-height: 18px
 }
-article .mobile-cart .mobile-curt-list .left-side span,
-article .mobile-cart .mobile-curt-list .right-side span {
-  color: #21325e;
-  font-size: 20px;
-  line-height: 23px
-}
-article .mobile-cart .mobile-curt-list .left-side .green,
-article .mobile-cart .mobile-curt-list .right-side .green {
+article .car-list .car-item .car-info .green {
   color: #009c41
 }
 @media all and (min-width:766px) {
@@ -333,8 +342,16 @@ article .mobile-cart .mobile-curt-list .right-side .green {
     height: 58px;
     font-size: 18px
   }
-  article .mobile-cart {
-    width: 45%
+  article .car-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+  }
+  article .car-list .car-item {
+    -ms-flex-preferred-size: 45%;
+    flex-basis: 45%
   }
 }
 @media all and (min-width:1200px) {
@@ -360,97 +377,55 @@ article .mobile-cart .mobile-curt-list .right-side .green {
     -ms-flex-direction: column;
     flex-direction: column
   }
-  article .mobile-cart {
-    display: none
+  article .search-section .search-group {
+    -ms-flex-preferred-size: 79%;
+    flex-basis: 79%
   }
-  article .desktop-list {
-    display: block;
-    width: 100%;
+  article .car-list .cars-headers-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 90%;
+    flex-basis: 90%;
     max-width: 1076px;
-    margin: 0 auto
+    margin: 0 auto;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    padding: 11px
   }
-  article .desktop-list .car-list {
-    width: 100%
-  }
-  article .desktop-list .car-list .car-list-item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    list-style-type: none
-  }
-  article .desktop-list .car-list .header-item {
-    pointer-events: none
-  }
-  article .desktop-list .car-list .header-item .header-item-name {
+  article .car-list .cars-headers-desktop p {
     font-size: 14px;
     line-height: 16px;
     font-family: Arimo,sans-serif;
     font-weight: 400;
-    color: #fff
+    color: #fff;
+    text-align: center;
+    -ms-flex-preferred-size: 10%;
+    flex-basis: 10%
   }
-  article .desktop-list .car-list .body-item {
+  article .car-list .cars-headers-desktop .num {
+    -ms-flex-preferred-size: 5%;
+    flex-basis: 5%
+  }
+  article .car-list .car-item {
     position: relative;
-    font-size: 14px;
-    line-height: 16px;
-    font-family: Arimo,sans-serif;
-    font-weight: 400;
-    color: #888;
-    padding: 2px 0;
-    background-color: #fff;
-    border-radius: 35px;
-    margin: 5px 0;
-    height: 45px;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    cursor: pointer
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 1076px;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    padding: 11px;
+    margin: 5px auto
   }
-  article .desktop-list .car-list .body-item .custom-checkbox {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    cursor: pointer;
-    position: relative;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center
-  }
-  article .desktop-list .car-list .body-item .custom-checkbox input {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 50px;
-    opacity: 0;
-    z-index: -1
-  }
-  article .desktop-list .car-list .body-item .custom-checkbox .checkbox::before {
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100%
-  }
-  article .desktop-list .car-list .body-item .custom-checkbox input:checked + .checkbox::before {
-    background-color: transparent;
-    background-image: url(../img/chekbox.png)
-  }
-  article .desktop-list .car-list .body-item .list-item-title {
-    border-right: 1px solid #5e5e5e
-  }
-  article .desktop-list .car-list .body-item .list-item-title:last-child {
-    border: none
-  }
-  article .desktop-list .car-list .body-item .contact {
+  article .car-list .car-item .contact {
     position: absolute;
     top: 0;
-    right: -111px;
-    display: none;
-    height: 100%
+    right: -10%;
+    height: 100%;
+    display: none
   }
-  article .desktop-list .car-list .body-item .letter,
-  article .desktop-list .car-list .body-item .pencil {
+  article .car-list .car-item .contact .letter,
+  article .car-list .car-item .contact .pencil {
     height: 100%;
     width: 45px;
     background-color: #fff;
@@ -466,48 +441,123 @@ article .mobile-cart .mobile-curt-list .right-side .green {
     border-radius: 50%;
     margin-left: 11px
   }
-  article .desktop-list .car-list .body-item .letter:hover,
-  article .desktop-list .car-list .body-item .pencil:hover {
+  article .car-list .car-item .contact .letter:hover,
+  article .car-list .car-item .contact .pencil:hover {
     background-color: #ff7728
   }
-  article .desktop-list .car-list .body-item:hover {
+  article .car-list .car-item:hover {
     background-color: #ff7728;
-    color: #fff;
-    -webkit-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s
+    -webkit-transition: .5s all;
+    -o-transition: .5s all;
+    transition: .5s all
   }
-  article .desktop-list .car-list .body-item:hover .contact {
+  article .car-list .car-item:hover .contact {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
-    -webkit-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s
+    display: flex
   }
-  article .desktop-list .car-list .num {
-    width: 63px;
-    text-align: center
+  article .car-list .car-item:hover .car-info p {
+    color: #fff
   }
-  article .desktop-list .car-list .brand,
-  article .desktop-list .car-list .name {
-    width: 167px;
-    text-align: center
+  article .car-list .car-item .car-navigation {
+    display: none
   }
-  article .desktop-list .car-list .car-code,
-  article .desktop-list .car-list .car-num,
-  article .desktop-list .car-list .year1,
-  article .desktop-list .car-list .year2 {
-    width: 105px;
-    text-align: center
+  article .car-list .car-item .car-info {
+    position: relative;
+    height: 100%
   }
-  article .desktop-list .car-list .code {
-    width: 122px;
+  article .car-list .car-item .car-info .custom-checkbox {
+    pointer-events: auto;
+    position: relative;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+  }
+  article .car-list .car-item .car-info .custom-checkbox .checkbox::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%
+  }
+  article .car-list .car-item .car-info .custom-checkbox input:checked + .checkbox::before {
+    background-color: transparent;
+    background-image: url(../img/chekbox.png)
+  }
+  article .car-list .car-item .car-info .mobile-cart-header {
+    display: none
+  }
+  article .car-list .car-item .car-info .space {
+    display: none
+  }
+  article .car-list .car-item .car-info .checkbox,
+  article .car-list .car-item .car-info p {
+    border-right: 1px solid #5e5e5e;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: Arimo,sans-serif;
+    font-weight: 400;
+    color: #888;
+    padding: 2px 0;
+    margin-top: 0;
     text-align: center;
-    display: block
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: 10%;
+    flex-basis: 10%
   }
-  article .desktop-list .car-list .checkbox {
-    width: 139px;
-    text-align: center
+  article .car-list .car-item .car-info .checkbox br,
+  article .car-list .car-item .car-info p br {
+    display: none
+  }
+  article .car-list .car-item .car-info .checkbox:last-child,
+  article .car-list .car-item .car-info p:last-child {
+    border: none
+  }
+  article .car-list .car-item .car-info .code {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2
+  }
+  article .car-list .car-item .car-info .year2 {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3
+  }
+  article .car-list .car-item .car-info .year1 {
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
+    order: 4
+  }
+  article .car-list .car-item .car-info .car-code {
+    -webkit-box-ordinal-group: 6;
+    -ms-flex-order: 5;
+    order: 5
+  }
+  article .car-list .car-item .car-info .car-num {
+    -webkit-box-ordinal-group: 7;
+    -ms-flex-order: 6;
+    order: 6
+  }
+  article .car-list .car-item .car-info .brand {
+    -webkit-box-ordinal-group: 8;
+    -ms-flex-order: 7;
+    order: 7
+  }
+  article .car-list .car-item .car-info .name {
+    -webkit-box-ordinal-group: 9;
+    -ms-flex-order: 8;
+    order: 8
+  }
+  article .car-list .car-item .car-info .num {
+    -webkit-box-ordinal-group: 10;
+    -ms-flex-order: 9;
+    order: 9;
+    -ms-flex-preferred-size: 5%;
+    flex-basis: 5%;
+    display: block
   }
 }
