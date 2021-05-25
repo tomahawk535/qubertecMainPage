@@ -44,9 +44,6 @@ article {
   .not-mobile {
     display: none;
   }
-  .desktop-list {
-    display: none;
-  }
   .options {
     width: 100%;
     margin: 27px 0;
@@ -79,7 +76,7 @@ article {
     align-items: center;
     padding: 10px 5%;
     .search-group {
-      flex-basis: 85%;
+     width: 83%;
       display: flex;
       height: 40px;
       align-items: center;
@@ -87,7 +84,7 @@ article {
       border-radius:  $border-radius;
       padding: 0 15px;
       input {
-        flex-basis: 90%;
+        width: 100%;
         padding: 0 10px;
         border: none;
         outline: none;
@@ -119,66 +116,93 @@ article {
       border-radius: 10px;
     }
   }
-  .mobile-cart {
-    width: 90%;
-    margin: 0 auto 26px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 30px;
-    background-color:  $bg-color-wht;
-    .mobile-cart-header {
+    .car-list {
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 13px;
-      border-bottom: 2px solid #1D4076;
-      .letter-ico, .pan-ico {
-        background-color: $btn-bg-color-first;
-        height: 40px;
-        width: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        img {
-          width: 60%;
+      .cars-headers-desktop {
+        display: none;
+      }
+      .car-item {
+        width: 90%;
+        margin: 0 auto 26px;
+        padding: 20px;
+        border-radius: 30px;
+        background-color:  $bg-color-wht;
+        .not-mobile {
+          display: none;
         }
-      }
-      .pan-ico {
-        margin-left: 15px;
-      }
-      .car-ico {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        .car-navigation {
+          display: flex;
+          padding-bottom: 13px;
+          border-bottom: 2px solid #1D4076;
+          .letter-ico, .pan-ico {
+            background-color: $btn-bg-color-first;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            img {
+              width: 60%;
+            }
+          }
+          .pan-ico {
+            margin-left: 15px;
+          }
+          .car-ico {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .car-info {
+          display: flex;
+          flex-wrap: wrap;
+          .custom-checkbox {
+            display: flex;
+            flex-wrap: wrap;
+            cursor: pointer;
+            position: relative;
+            align-items: flex-end;
+            justify-content: space-between;
+            width: 100%;
+            pointer-events: none;
+            input {
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              left: 50px;
+              opacity: 0;
+              z-index: -1;
+              pointer-events: none;
+            }
+
+          }
+          .num {
+            display: none;
+          }
+          p, .checkbox {
+            flex-basis: 50%;
+            @include user-text;
+            margin-top: 14px;
+            text-align: right;
+            font-size: 18px;
+            font-weight: 20px;
+            color: #21325E;
+          }
+          span {
+            color: $sub-font-color;
+            font-size: 16px;
+            line-height: 18px;
+          }
+          .green {
+            color: #009C41;
+          }
+
+        }
       }
     }
-    .mobile-curt-list {
-      display: flex;
-      flex-wrap: nowrap;
-      .left-side, .right-side {
-        flex-basis: 50%;
-        text-align: right;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        p {
-          @include user-text;
-          color: $sub-font-color;
-          margin-top: 14px;
-        }
-        span {
-          color: #21325E;
-          font-size: 20px;
-          line-height: 23px;
-        }
-        .green {
-          color: #009C41;
-        }
-      }
-    }
-  }
+
 
 }

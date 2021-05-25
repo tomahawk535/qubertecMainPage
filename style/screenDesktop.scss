@@ -18,82 +18,43 @@
   }
   article {
     flex-direction: column;
-    .mobile-cart {
-      display: none;
+    .search-section {
+      .search-group {
+        flex-basis: 79%;
+      }
     }
-    .desktop-list {
-      display: block;
-      width: 100%;
-      max-width: 1076px;
-      margin: 0 auto;
-      .car-list {
-        width: 100%;
-        .car-list-item {
-          display: flex;
-          list-style-type: none;
-        }
-        .header-item {
-          pointer-events: none;
-          .header-item-name {
-            @include table-headers;
-            color: $main-font-color;
-          }
-        }
-        .body-item {
-          position: relative;
+    .car-list {
+      .cars-headers-desktop {
+        display: flex;
+        flex-basis: 90%;
+        max-width: 1076px;
+        margin: 0 auto;
+        justify-content: space-around;
+        padding: 11px;
+        p {
           @include table-headers;
-          color: $sub-font-color;
-          padding: 2px 0;
-          background-color: $bg-color-wht;
-          border-radius: $border-radius;
-          margin: 5px 0;
-          height: 45px;
-          align-items: center;
-          cursor: pointer;
-          .custom-checkbox {
-            display: flex;
-            cursor: pointer;
-            position: relative;
-            align-items: center;
-            input {
-              position: absolute;
-              width: 20px;
-              height: 20px;
-              //top: calc (20px -50%);
-              left: 50px;
-              opacity: 0;
-              z-index: -1;
-            }
-            .checkbox::before {
-              content: '';
-              display: inline-block;
-              width: 20px;
-              height: 20px;
-              background-repeat: no-repeat;
-              background-position: center center;
-              background-size: 100%;
+          color: $main-font-color;
+          text-align: center;
+          flex-basis: 10%;
+        }
+        .num {
+          flex-basis: 5%;
+        }
+      }
+      .car-item {
+        position: relative;
+        flex-basis: 100%;
+        max-width: 1076px;
+        align-content: center;
+        padding: 11px;
+        margin: 5px auto;
+        .contact {
+          position: absolute;
+          top: 0;
+          right: -10%;
+          height: 100%;
+          display: none;
 
-            }
-            input:checked+.checkbox::before {
-              background-color: transparent;
-              background-image: url("../img/chekbox.png");
-            }
-
-          }
-          .list-item-title {
-            border-right: 1px solid #5e5e5e;
-            &:last-child {
-              border: none;
-            }
-          }
-          .contact {
-            position: absolute;
-            top: 0;
-            right: -111px;
-            display: none;
-            height: 100%;
-
-          }
           .letter, .pencil {
             height: 100%;
             width: 45px;
@@ -107,40 +68,97 @@
               background-color: $active-color;
             }
           }
-          &:hover {
-            background-color: $active-color;
-            color: $main-font-color;
-            transition: 0.5s;
-            .contact {
-              display: flex;
-              transition: 0.5s;
+
+        }
+        &:hover {
+          background-color: $active-color;
+          transition: 0.5s all;
+          .contact {
+            display: flex;
+          }
+          .car-info {
+            p {
+              color: $main-font-color;
             }
           }
         }
-        .num {
-          width: 63px;
-          text-align: center;
+        .car-navigation {
+          display: none;
         }
-        .name, .brand {
-          width: 167px;
-          text-align: center;
+        .car-info {
+          position: relative;
+          height: 100%;
+          .custom-checkbox {
+            pointer-events: auto;
+            position: relative;
+            align-items: center;
+            .checkbox::before {
+              content: '';
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-size: 100%;
+            }
+            input:checked+.checkbox::before {
+              background-color: transparent;
+              background-image: url("../img/chekbox.png");
+            }
+          }
+          .mobile-cart-header{
+            display: none;
+          }
+          .space {
+            display: none;
+          }
+          p, .checkbox {
+            border-right: 1px solid #5e5e5e;
+            @include table-headers;
+            color: $sub-font-color;
+            padding: 2px 0;
+            margin-top: 0;
+            text-align: center;
+            flex-grow: 1;
+            flex-basis: 10%;
+            br {
+              display: none;
+            }
+            &:last-child {
+              border: none;
+            }
+          }
+          .code {
+            order: 2;
+          }
+          .year2 {
+            order: 3;
+          }
+          .year1 {
+            order: 4;
+          }
+          .car-code {
+            order: 5;
+          }
+          .car-num {
+            order: 6;
+          }
+          .brand {
+            order: 7;
+          }
+          .name {
+            order: 8;
+          }
+          .num {
+            order: 9;
+            flex-basis: 5%;
+            display: block;
+          }
         }
-        .car-num, .car-code, .year1, .year2 {
-          width: 105px;
-          text-align: center;
-        }
-        .code {
-          width: 122px;
-          text-align: center;
-          display: block;
-        }
-        .checkbox {
-          width: 139px;
-          text-align: center;
-        }
-
       }
     }
   }
+
+
 
 }
