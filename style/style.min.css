@@ -347,7 +347,9 @@ article .car-list .car-item .car-info .green {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    max-width: 70%;
+    margin: 0 auto
   }
   article .car-list .car-item {
     -ms-flex-preferred-size: 45%;
